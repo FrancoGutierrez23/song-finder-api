@@ -1,0 +1,41 @@
+.nav-bttns-container {
+    display: none;
+  }
+
+  @media only screen and (max-width: 650px) {
+    .nav-bttns-container {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        border-top-left-radius: 20px;
+        left: 15px;
+        bottom: 20px;
+      }
+  }
+  
+  .nav-bttns-container button {
+    width: 50px; /* Set the width of the buttons */
+    height: 50px; /* Set the height of the buttons */
+    margin: 5px 0;
+    background-size: cover; /* Cover the entire button area with the image */
+    background-position: center; /* Center the background image */
+    border: none; /* Remove default border */
+    border-radius: 15px; /* Apply rounded corners */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: transform 0.2s; /* Smooth transition for transform */
+  }
+  
+  /* Specific styles for each button */
+  .search-section-bttn {
+    background-image: url('/public/resources/uparrow.jpg'); /* Path to your search button image */
+  }
+  
+  .playlist-section-bttn {
+    background-image: url('/public/resources/downarrow.jpg'); /* Path to your down button image */
+  }
+  
+  /* Add a hover effect to make it more interactive */
+  .nav-bttns-container button:hover {
+    transform: scale(1.1); /* Slightly enlarge the button on hover */
+  }
+  

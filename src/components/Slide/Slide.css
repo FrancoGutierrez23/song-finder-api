@@ -1,0 +1,15 @@
+.slide {
+    white-space: nowrap;
+    animation: slide 1s linear infinite; /* Initial delay of 3 seconds */
+  }
+
+  
+  @keyframes slide {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  

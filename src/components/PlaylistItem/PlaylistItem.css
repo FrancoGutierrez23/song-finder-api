@@ -1,0 +1,29 @@
+.cont {
+    overflow: hidden;
+    display: flex;
+}
+
+.added-card {
+    border: 2px solid #805300;
+    border-radius: 15px;
+    max-width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 5px 3px;
+    padding: 4px;
+}
+
+.added-card button {
+    border-radius: 15%;
+    border: 2px solid black;
+    padding: 2.5px 10px;
+    font-size: 16px;
+    color: #FF2500;
+    background-color: black;
+    font-weight: bold;
+}
+
+.added-card .headings {
+    width: 80%;
+}

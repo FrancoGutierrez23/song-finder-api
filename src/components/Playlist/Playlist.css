@@ -1,0 +1,20 @@
+.added-cards-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #805300;
+    border-radius: 10px;
+}
+
+.Playlist {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+h2 {
+    width: fit-content;
+    color: rgb(0, 0, 0);
+    padding: 15px 0px;
+    text-decoration: 2px #805300 underline;
+}

@@ -1,0 +1,85 @@
+.cont {
+    overflow: hidden;
+    display: flex;
+}
+
+.results-cards-container {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #805300;
+    border-radius: 10px;
+}
+
+.result-card {
+    /*border: 2px solid #805300;*/
+    border-radius: 15px;
+    max-width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 5px 3px;
+    padding: 4px;
+}
+
+.result-card .add{
+    border-radius: 5px;
+    border: 2px solid black;
+    padding: 4px 10px;
+    font-size: 18px;
+    color: #005AFF;
+    background-color: black;
+    font-weight: bold;
+    min-width: 2.4em;
+}
+
+@media only screen and (max-width: 725px) {
+    .result-card .add {
+        min-width: 2em;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .result-card .add {
+        min-width: 2.4em;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .result-card .add {
+        min-width: 2em;
+    }
+}
+
+.result-card .headings {
+    width: 70%;
+}
+
+.play-pause {
+    border-radius: 5px;
+    border: 0px solid black;
+    padding: 0px 0px;
+    font-size: 24px;
+    color: #005AFF;
+    background-color: black;
+    font-weight: bold;
+    min-width: 1.9em;
+}
+
+@media only screen and (max-width: 725px) {
+    .play-pause {
+        min-width: 1.5em;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .play-pause {
+        min-width: 1.9em;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .play-pause {
+        min-width: 1.5em;
+    }
+}
