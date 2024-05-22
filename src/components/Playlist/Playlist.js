@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PlaylistItem from '../PlaylistItem/PlaylistItem';
 import './Playlist.css';
 
