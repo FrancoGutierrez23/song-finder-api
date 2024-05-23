@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
-import './Slide.css'; // Import the CSS file
+import './Slide.css';
 
 function Slide({ text }) {
   const textRef = useRef(null);
@@ -13,7 +13,7 @@ function Slide({ text }) {
       setTextWidth(textRef.current.offsetWidth);
       const textLength = textRef.current.innerText.length;
       // Set duration proportional to the text length
-      setAnimationDuration(textLength * 0.25); // Adjust the multiplier as needed
+      setAnimationDuration(textLength * 0.25);
     }
   }, [text]);
 
@@ -25,7 +25,7 @@ function Slide({ text }) {
   // Start animation after delay
   useEffect(() => {
     const timer = setTimeout(() => {
-      setAnimationDelay(0); // Start animation immediately
+      setAnimationDelay(0);
     }, animationDelay * 1000);
 
     return () => clearTimeout(timer);

@@ -2,6 +2,8 @@ import React from "react";
 import './PhoneNavBttn.css';
 
 const PhoneNavBttn = () => {
+
+  //Handle navegation between sections
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
     if (section) {

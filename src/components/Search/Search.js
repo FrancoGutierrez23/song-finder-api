@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Search.css';
-import SearchResults from '../SearchResults/SearchResults'; // Import the SearchResults component
+import SearchResults from '../SearchResults/SearchResults';
 
 const Search = ({ addToPlaylist }) => {
   const [query, setQuery] = useState('');
@@ -16,12 +16,10 @@ const Search = ({ addToPlaylist }) => {
         
         // Check if id is already encountered
         if (!(id in ids)) {
-          // If id is not encountered, add it to the ids object and add the object to the new array
           ids[id] = true;
           newArr.push(obj);
         }
       } else {
-        // If the value is not an object or doesn't have an id, add it directly to the new array
         newArr.push(obj);
       }
     }
@@ -29,6 +27,7 @@ const Search = ({ addToPlaylist }) => {
     return newArr;
   }
 
+  /*Handle search feature*/
   const handleSearch = async () => {
     const url = `https://deezerdevs-deezer.p.rapidapi.com/search?q=${query}`;
     const options = {
@@ -44,7 +43,7 @@ const Search = ({ addToPlaylist }) => {
       const data = await response.json();
       const newData = await data.data;
       const revisedData = removeDuplicatesFromArray(newData);
-      setSearchResults(revisedData); // Assuming data is an array of search results
+      setSearchResults(revisedData);
     } catch (error) {
       console.error(error);
     }
@@ -56,17 +55,19 @@ const Search = ({ addToPlaylist }) => {
     }
   };
 
+
   return (
     <div className='Search' id='search-section'>
-      <div className='searcher'>
+      <div id='wrapper'>
         <input 
-          type="text" 
+          type="search" 
+          id='search'
           value={query} 
           onChange={(e) => setQuery(e.target.value)} 
-          onKeyDown={handleKeyDown} // Add keydown event listener
+          onKeyDown={handleKeyDown}
           placeholder="Search for songs..."
         />
-        <button onClick={handleSearch} className='search-btn'>Search</button>
+        
       </div>
       
       {searchResults.length > 0 && (

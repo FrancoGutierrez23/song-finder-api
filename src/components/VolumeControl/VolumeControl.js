@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './VolumeControl.css';
 
 const VolumeControl = () => {
-  const [volume, setVolume] = useState(0.5); // Initial volume value
+  const [volume, setVolume] = useState(0.5);
 
   const handleVolumeChange = (e) => {
     const newVolume = parseFloat(e.target.value);
