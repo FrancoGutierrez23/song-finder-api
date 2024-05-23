@@ -15,15 +15,16 @@
 }
 
 .added-card button {
-    border-radius: 15%;
-    border: 2px solid black;
-    padding: 2.5px 10px;
-    font-size: 16px;
-    color: #FF2500;
-    background-color: black;
+    border-radius: 5px;
+    border: 2px solid #072831;
+    padding: 4px 10px;
+    font-size: 18px;
+    color: #981212;
+    background-color: #072831;
     font-weight: bold;
+    min-width: 2.4em;
 }
 
 .added-card .headings {
-    width: 80%;
+    width: 85%;
 }

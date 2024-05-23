@@ -25,15 +25,15 @@
   }
   
   .Search input[type="text"]:focus {
-    border-color: #00D9FF;
+    border-color: #0a313c;
   }
   
   /* Search button */
   .Search .search-btn {
     
     padding: 10px 10px;
-    background-color: #005AFF;
-    color: #fff;
+    background-color: #072831;
+    color: #fea500;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -42,7 +42,7 @@
   }
   
   .Search .search-btn:hover {
-    background-color: #0056b3;
+    background-color: #0a313c;
   }
   
   

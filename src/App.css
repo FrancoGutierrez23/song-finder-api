@@ -3,7 +3,7 @@
     width: 100%;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    margin: 3% 1% 35% 1%;
+    margin: 3% 1% 8% 1%;
     max-width: 1000px;
 }
 
@@ -27,6 +27,7 @@
         flex-direction: column;
         max-width: 90vw;
         align-items: center;
+        margin-bottom: 65%;
     }
 
     .Search {

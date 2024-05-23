@@ -24,11 +24,11 @@
 
 .result-card .add{
     border-radius: 5px;
-    border: 2px solid black;
-    padding: 4px 10px;
+    border: 2px solid #072831;
+    padding: 6px 10px;
     font-size: 18px;
-    color: #005AFF;
-    background-color: black;
+    color: #fea500;
+    background-color: #072831;
     font-weight: bold;
     min-width: 2.4em;
 }
@@ -55,31 +55,41 @@
     width: 70%;
 }
 
-.play-pause {
+.play {
+    background: url(/public/resources/play.jpg);
+}
+
+.pause {
+    background: url(/public/resources/pause.jpg);
+}
+
+.play,
+.pause {
+    background-size: cover;
+    width: 35px;
+    height: 35px;
+    border: 2px solid #072831;
     border-radius: 5px;
-    border: 0px solid black;
-    padding: 0px 0px;
-    font-size: 24px;
-    color: #005AFF;
-    background-color: black;
-    font-weight: bold;
-    min-width: 1.9em;
+    background-color: #072831;
 }
 
 @media only screen and (max-width: 725px) {
-    .play-pause {
+    .play,
+    .pause {
         min-width: 1.5em;
     }
 }
 
 @media only screen and (max-width: 650px) {
-    .play-pause {
+    .play,
+    .pause {
         min-width: 1.9em;
     }
 }
 
 @media only screen and (max-width: 350px) {
-    .play-pause {
+    .play,
+    .pause {
         min-width: 1.5em;
     }
 }

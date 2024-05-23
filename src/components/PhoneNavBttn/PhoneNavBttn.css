@@ -9,13 +9,13 @@
         position: fixed;
         border-top-left-radius: 20px;
         left: 15px;
-        bottom: 20px;
+        bottom: 40px;
       }
   }
   
   .nav-bttns-container button {
-    width: 50px; /* Set the width of the buttons */
-    height: 50px; /* Set the height of the buttons */
+    width: 65px; /* Set the width of the buttons */
+    height: 65px; /* Set the height of the buttons */
     margin: 5px 0;
     background-size: cover; /* Cover the entire button area with the image */
     background-position: center; /* Center the background image */

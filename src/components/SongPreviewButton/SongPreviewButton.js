@@ -31,11 +31,12 @@ const SongPreviewButton = ({ previewUrl }) => {
   return (
     <div className='sepcial'>
       <audio ref={audioRef} src={previewUrl} />
-      <button onClick={togglePlay} className='play-pause'>
-        {isPlaying ? '⏸' : '⏵'}
+      <button onClick={togglePlay} className={isPlaying? 'pause' : 'play'}>
+        
       </button>
     </div>
   );
 };
+
 
 export default SongPreviewButton;
