@@ -14,25 +14,17 @@
     border: 2px solid #072831;
     border-radius: 5px;
     background-color: #072831;
+    margin-left: 0px;
 }
 
 @media only screen and (max-width: 725px) {
-    .play,
-    .pause {
-        min-width: 1.5em;
-    }
+    
 }
 
 @media only screen and (max-width: 650px) {
-    .play,
-    .pause {
-        min-width: 1.9em;
-    }
+    
 }
 
 @media only screen and (max-width: 350px) {
-    .play,
-    .pause {
-        min-width: 1.5em;
-    }
+
 }

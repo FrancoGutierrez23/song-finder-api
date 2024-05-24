@@ -5,7 +5,7 @@
 }
 
 .added-card .headings {
-    width: 85%;
+    width: 70%;
 }
 
 /*Songs added to playlist*/
@@ -29,5 +29,17 @@
     color: #981212;
     background-color: #072831;
     font-weight: bold;
-    min-width: 2.4em;
+    width: 35px;
+}
+
+.added-card .card-bttns {
+    display: flex;
+    width: 25%;
+    height: 35px;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+
+.sepcial {
+    width: 35px;
 }

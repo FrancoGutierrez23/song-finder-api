@@ -31,29 +31,60 @@
 /*Add button*/
 .result-card .add{
     border-radius: 5px;
-    border: 2px solid #072831;
+    border: 3px solid #000000;
     padding: 6px 10px;
-    font-size: 18px;
+    font-size: 13px;
     color: #fea500;
     background-color: #072831;
     font-weight: bold;
-    min-width: 2.4em;
+    z-index: 10;
+    transform: translate(-1.2em, -1em);
+    min-width: 15em;
 }
+
+.add-again {
+    font-size: 13px;
+    margin: 0px;
+}
+
+p.add-option-text {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+}
+
+#options {
+    margin-left: 10px;
+    background-color: #072831;
+    border: none;
+    border-radius: 0.2em;
+    color: #fea500;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+.card-bttns {
+    display: flex;
+    width: 20%;
+    height: 35px;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+
 
 @media only screen and (max-width: 725px) {
-    .result-card .add {
-        min-width: 2em;
+    .card-bttns {
+        width: 30%;
+    }
+
+    .result-card .headings {
+        width: 70%;
     }
 }
 
-@media only screen and (max-width: 650px) {
-    .result-card .add {
-        min-width: 2.4em;
-    }
-}
+.duration {
+    font-size: 12px;
 
-@media only screen and (max-width: 350px) {
-    .result-card .add {
-        min-width: 2em;
-    }
+    color: #00000097;
 }

@@ -1,27 +1,78 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Slide from '../Slide/Slide';
 import './SearchResults.css';
 import SongPreviewButton from '../SongPreviewButton/SongPreviewButton';
 
-const SearchResultItem = ({ result, addToPlaylist, playlist}) => {
-  // Function to handle adding the song to the playlist
-    const handleAddToPlaylist = () => {
-        addToPlaylist(result);
+const SearchResultItem = ({ result, addToPlaylist, playlist }) => {
+  const [showAddButton, setShowAddButton] = useState(false);
+  const addButtonRef = useRef(null);
+  const optionsButtonRef = useRef(null);
+
+  const handleAddToPlaylist = () => {
+    addToPlaylist(result);
+    setShowAddButton(false);  // Hide the button after adding the song to the playlist
+  };
+
+  const handleToggleAddButton = () => {
+    setShowAddButton((prevShowAddButton) => !prevShowAddButton);
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        addButtonRef.current &&
+        !addButtonRef.current.contains(event.target) &&
+        !optionsButtonRef.current.contains(event.target)
+      ) {
+        setShowAddButton(false);
+      }
     };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  const addButton = (
+    <button
+      ref={addButtonRef}
+      onClick={handleAddToPlaylist}
+      className='add'
+      style={{ display: showAddButton ? 'flex' : 'none' }}
+    >
+      {result.artist.toggle >= 0 ? (
+        <p style={{ display: 'flex', width: '100%'}}>
+          <p className='add-again add-option-text'><p>+</p> <p>Add to playlist again</p></p>
+        </p>
+      ) : (
+        <p className='add-option-text'><p>+</p><p style={{paddingRight: 15}}>Add to playlist</p></p>
+      )}
+    </button>
+  );
+
+  function formatTime(seconds) {
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = seconds % 60;
+    return `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
+}
 
   return (
     <div className='result-card'>
-      <div className='headings' >
-        <h3>{result.title}</h3>
+      <div className='headings'>
+        <h3>{result.title}<p className='duration'> {formatTime(result.duration)}</p></h3>
         <div className='cont'><Slide text={`${result.artist.name} at ${result.album.title}`} /></div>
       </div>
-      <SongPreviewButton previewUrl={result.preview} />
-      <button onClick={handleAddToPlaylist} className='add' >{result.artist.toggle >= 0 ? <p style={{display: 'flex'}}>+ <span style={{fontSize: 10, display: 'flex', margin: 0}}>{result.artist.toggle + 1}</span></p> : '+'}</button>
+      <div className='card-bttns'>
+        <SongPreviewButton previewUrl={result.preview} />
+        <button ref={optionsButtonRef} onClick={handleToggleAddButton} id='options'>⋮</button>
+        {addButton}
+      </div>
     </div>
   );
 };
 
-const SearchResults = ({ results, addToPlaylist}) => {
+const SearchResults = ({ results, addToPlaylist }) => {
   return (
     <div className='results-cards-container'>
       {results.map((result) => (

@@ -1,6 +1,7 @@
 import React from 'react';
 import Slide from '../Slide/Slide';
 import './PlaylistItem.css';
+import SongPreviewButton from '../SongPreviewButton/SongPreviewButton';
 
 const PlaylistItem = ({song, removeFromPlaylist, playlist}) => {
   // Function to handle removing the song from the playlist
@@ -15,8 +16,11 @@ const PlaylistItem = ({song, removeFromPlaylist, playlist}) => {
         <h3>{song.title}</h3>
         <div className='cont'><Slide text={`${song.artist.name} at ${song.album.title}`} /></div>
       </div>
-      {/* Add button to remove the song from the playlist */}
+      <div className='card-bttns'>
+        <SongPreviewButton />
       <button onClick={handleClick}>x</button>
+      </div>
+      
     </div>
   );
 };

@@ -58,6 +58,7 @@ const Search = ({ addToPlaylist }) => {
 
   return (
     <div className='Search' id='search-section'>
+      <div ></div>
       <div id='wrapper'>
         <input 
           type="search" 
