@@ -7,7 +7,9 @@ const PhoneNavBttn = () => {
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+      setTimeout(() => {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }, 100); // Adjust the timeout as necessary
     }
   };
 
