@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from 'react';
-import Slide from '../Slide/Slide';
 import './SearchResults.css';
 import SongPreviewButton from '../SongPreviewButton/SongPreviewButton';
 

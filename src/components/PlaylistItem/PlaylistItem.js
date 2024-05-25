@@ -1,5 +1,4 @@
 import React from 'react';
-import Slide from '../Slide/Slide';
 import './PlaylistItem.css';
 import SongPreviewButton from '../SongPreviewButton/SongPreviewButton';
 
