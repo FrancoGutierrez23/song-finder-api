@@ -1,8 +1,5 @@
 /*Headings*/
-.cont {
-    overflow: hidden;
-    display: flex;
-}
+
 
 .added-card .headings {
     width: 70%;
@@ -14,14 +11,14 @@
     border-radius: 15px;
     max-width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     margin: 5px 3px;
     padding: 4px;
 }
 
 /*Remove of playlist button*/
-.added-card button {
+.remove-btn {
     border-radius: 5px;
     border: 2px solid #072831;
     padding: 4px 10px;
@@ -30,16 +27,39 @@
     background-color: #072831;
     font-weight: bold;
     width: 35px;
+    margin-left: 10px;
 }
 
 .added-card .card-bttns {
     display: flex;
-    width: 25%;
+    width: 24%;
     height: 35px;
-    justify-content: space-between;
+    justify-content: flex-end;
     flex-wrap: nowrap;
+}
+
+@media (max-width: 650px) {
+    .added-card .card-bttns {
+        width: 24%;
+        justify-content: flex-end;
+    }
+
+    .remove-btn {
+        margin-left: 10px;
+    }
+
+    .added-card {
+        justify-content: space-between;
+    }
 }
 
 .sepcial {
     width: 35px;
 }
+
+.cont {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+

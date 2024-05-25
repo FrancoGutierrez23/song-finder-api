@@ -3,20 +3,24 @@ import Slide from '../Slide/Slide';
 import './SearchResults.css';
 import SongPreviewButton from '../SongPreviewButton/SongPreviewButton';
 
-const SearchResultItem = ({ result, addToPlaylist, playlist }) => {
-  const [showAddButton, setShowAddButton] = useState(false);
-  const addButtonRef = useRef(null);
-  const optionsButtonRef = useRef(null);
+// Component to render each search result item
+const SearchResultItem = ({ result, addToPlaylist }) => {
+  const [showAddButton, setShowAddButton] = useState(false); // State to toggle add button visibility
+  const addButtonRef = useRef(null); // Ref for the add button
+  const optionsButtonRef = useRef(null); // Ref for the options button
 
+  // Function to handle adding a song to the playlist
   const handleAddToPlaylist = () => {
     addToPlaylist(result);
     setShowAddButton(false);  // Hide the button after adding the song to the playlist
   };
 
+  // Function to toggle the visibility of the add button
   const handleToggleAddButton = () => {
     setShowAddButton((prevShowAddButton) => !prevShowAddButton);
   };
 
+  // Effect to handle clicks outside of the add button to close it
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (
@@ -34,6 +38,7 @@ const SearchResultItem = ({ result, addToPlaylist, playlist }) => {
     };
   }, []);
 
+  // JSX for the add button
   const addButton = (
     <button
       ref={addButtonRef}
@@ -42,26 +47,28 @@ const SearchResultItem = ({ result, addToPlaylist, playlist }) => {
       style={{ display: showAddButton ? 'flex' : 'none' }}
     >
       {result.artist.toggle >= 0 ? (
-        <p style={{ display: 'flex', width: '100%'}}>
-          <p className='add-again add-option-text'><p>+</p> <p>Add to playlist again</p></p>
-        </p>
+        <div style={{ display: 'flex', width: '100%'}}>
+          <span className='add-again add-option-text'><span>+</span> <span>Add to playlist again</span></span>
+        </div>
       ) : (
-        <p className='add-option-text'><p>+</p><p style={{paddingRight: 15}}>Add to playlist</p></p>
+        <p className='add-option-text'><span>+</span><span style={{paddingRight: 15}}>Add to playlist</span></p>
       )}
     </button>
   );
 
+  // Function to format time from seconds to MM:SS format
   function formatTime(seconds) {
     const minutes = Math.floor(seconds / 60);
     const remainingSeconds = seconds % 60;
     return `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
-}
+  }
 
+  // JSX for rendering each search result item
   return (
     <div className='result-card'>
       <div className='headings'>
         <h3>{result.title}<p className='duration'> {formatTime(result.duration)}</p></h3>
-        <div className='cont'><Slide text={`${result.artist.name} at ${result.album.title}`} /></div>
+        <div className='cont'>{`${result.artist.name} at ${result.album.title}`}</div>
       </div>
       <div className='card-bttns'>
         <SongPreviewButton previewUrl={result.preview} />
@@ -72,6 +79,7 @@ const SearchResultItem = ({ result, addToPlaylist, playlist }) => {
   );
 };
 
+// Component to render the list of search results
 const SearchResults = ({ results, addToPlaylist }) => {
   return (
     <div className='results-cards-container'>

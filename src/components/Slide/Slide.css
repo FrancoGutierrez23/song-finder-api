@@ -1,15 +1,21 @@
-.slide {
-    white-space: nowrap;
-    animation: slide 1s linear infinite; /* Initial delay of 3 seconds */
+@keyframes slideText {
+  0% {
+    transform: translateX(10%);
   }
+  100% {
+    transform: translateX(-50%);
+  }
+}
 
-  
-  @keyframes slide {
-    0% {
-      transform: translateX(100%);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
-  }
-  
+.slide {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  width: 100%;
+}
+
+.slide span {
+  display: inline-block;
+  animation: slideText linear infinite;
+  white-space: nowrap;
+}

@@ -14,11 +14,11 @@ const PlaylistItem = ({song, removeFromPlaylist, playlist}) => {
     <div className='added-card'>
       <div className='headings' >
         <h3>{song.title}</h3>
-        <div className='cont'><Slide text={`${song.artist.name} at ${song.album.title}`} /></div>
+        <div className='cont'>{`${song.artist.name} at ${song.album.title}`}</div>
       </div>
       <div className='card-bttns'>
-        <SongPreviewButton />
-      <button onClick={handleClick}>x</button>
+        <SongPreviewButton previewUrl={song.preview} />
+      <button onClick={handleClick} className='remove-btn'>x</button>
       </div>
       
     </div>

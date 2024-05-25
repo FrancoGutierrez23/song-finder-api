@@ -20,6 +20,12 @@
   background-color: transparent;
 }
 
+@media only screen and (max-width: 650px) {
+  .volume-control-container input[type="range"] {
+    display: none;
+  }
+}
+
 /* Style for slider thumb */
 .volume-control-container input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;

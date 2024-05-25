@@ -1,11 +1,8 @@
 /*Artist and album container*/
-.cont {
-    overflow: hidden;
-    display: flex;
-}
+
 
 .result-card .headings {
-    width: 70%;
+    max-width: 75%;
 }
 
 /*Results*/
@@ -22,7 +19,7 @@
     border-radius: 15px;
     max-width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     margin: 5px 3px;
     padding: 4px;
@@ -38,8 +35,10 @@
     background-color: #072831;
     font-weight: bold;
     z-index: 10;
-    transform: translate(-1.2em, -1em);
+    right: 1.4em;
+    top: 2em;
     min-width: 15em;
+    position: absolute;
 }
 
 .add-again {
@@ -51,6 +50,10 @@ p.add-option-text {
     display: flex;
     justify-content: space-between;
     width: 90%;
+}
+
+p.add-option-text span {
+    margin: 0px;
 }
 
 #options {
@@ -68,23 +71,35 @@ p.add-option-text {
     width: 20%;
     height: 35px;
     justify-content: flex-end;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    position: relative;
 }
 
-
+/*@media only screen and (max-width: 850px) {
+    .result-card .headings {
+        width: 75%;
+    }
+}
 
 @media only screen and (max-width: 725px) {
-    .card-bttns {
-        width: 30%;
-    }
-
     .result-card .headings {
         width: 70%;
     }
 }
 
+@media only screen and (max-width: 650px) {
+    .result-card .headings {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .result-card .headings {
+        width: 70%;
+    }
+}*/
+
 .duration {
     font-size: 12px;
-
     color: #00000097;
 }
