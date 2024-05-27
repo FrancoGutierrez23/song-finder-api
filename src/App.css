@@ -1,7 +1,7 @@
 .App {
     display: flex;
     width: 100%;
-    justify-content: space-evenly;
+    justify-content: space-around;
     flex-wrap: wrap;
     margin: 3% 1% 8% 1%;
     max-width: 1000px;
@@ -63,7 +63,7 @@ html, body {
     margin: 0;
     padding: 0;
     height: 100%;
-    background: linear-gradient(to top, #794f01, #ffa500); /* Black to Dark Gray */
+    background: linear-gradient(to top, #000000, #072831); /* Black to Dark Gray */
     height: 100%;
     overflow: auto;
     font-family: monospace;

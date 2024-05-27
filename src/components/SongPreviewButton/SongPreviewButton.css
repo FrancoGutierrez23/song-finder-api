@@ -1,14 +1,13 @@
 .play {
-    background: url(/public/resources/play.jpg);
+    color: #fea500;
 }
 
 .pause {
-    background: url(/public/resources/pause.jpg);
+    color: #fea500;
 }
 
 .play,
 .pause {
-    background-size: cover;
     width: 35px;
     height: 35px;
     border: 2px solid #072831;
@@ -17,14 +16,3 @@
     margin-left: 0px;
 }
 
-@media only screen and (max-width: 725px) {
-    
-}
-
-@media only screen and (max-width: 650px) {
-    
-}
-
-@media only screen and (max-width: 350px) {
-
-}

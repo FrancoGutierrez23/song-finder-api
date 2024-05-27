@@ -2,7 +2,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    background-color: #805300;
+    background-color: #00000049;
     border-radius: 10px;
 }
 
@@ -14,7 +14,12 @@
 
 h2 {
     width: fit-content;
-    color: rgb(0, 0, 0);
+    color: #b7cfd5;
     padding: 9px 0px 21px 0px;
-    text-decoration: 2px #805300 underline;
+}
+
+@media (max-width: 650px) {
+    .Playlist {
+        margin-top: 15px;
+    }
 }

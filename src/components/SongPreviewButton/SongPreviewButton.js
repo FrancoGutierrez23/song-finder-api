@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useAudio } from '../AudioContext/AudioContext'; // Import the context
 import './SongPreviewButton.css';
+import { FaPlay, FaPause } from "react-icons/fa";
 
 const SongPreviewButton = ({ previewUrl }) => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -41,6 +42,7 @@ const SongPreviewButton = ({ previewUrl }) => {
     <div className='sepcial'>
       <audio ref={audioRef} src={previewUrl} />
       <button onClick={togglePlay} className={isPlaying ? 'pause' : 'play'}>
+        {isPlaying ? <FaPause /> : <FaPlay />}
       </button>
     </div>
   );

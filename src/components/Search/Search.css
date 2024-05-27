@@ -23,9 +23,11 @@
     border: none;
     font-size: 1.15rem;
     transition: translateX 6s ease-in;
+    background-color: #b7cfd5;
+    color: #072831;
   }
   #search:focus {
-    outline: 1px solid #ffffff00;
+    outline: 1px solid #7c171700;
     border: none;
   }
   #search:focus::-webkit-input-placeholder {

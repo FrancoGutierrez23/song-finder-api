@@ -7,14 +7,15 @@
 
 /*Songs added to playlist*/
 .added-card {
-    border: 2px solid #805300;
+    border: 2px solid #00000000;
     border-radius: 15px;
     max-width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 5px 3px;
-    padding: 4px;
+    margin: 6px 4px;
+    padding: 6px;
+    color: #b7cfd5;
 }
 
 /*Remove of playlist button*/
