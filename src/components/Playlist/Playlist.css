@@ -2,24 +2,44 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    background-color: #00000049;
     border-radius: 10px;
+    overflow: hidden;
 }
 
 .Playlist {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    
 }
 
-h2 {
-    width: fit-content;
-    color: #b7cfd5;
-    padding: 9px 0px 21px 0px;
-}
+
 
 @media (max-width: 650px) {
     .Playlist {
         margin-top: 15px;
     }
 }
+
+  .wrap{width:100%;}
+  .gradient-text{
+    font-family: "Abril Fatface", sans-serif;
+    margin: 2px 0px 16px 0px;
+    background: linear-gradient(to right, #fea500, #b7cfd5, #072831);
+    background-size: 200% 200%;
+    animation: rainbow 4s ease-in-out infinite;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: rgba(0,0,0,0);  /* Make text color transparent by default */
+    display: block;
+    text-align: center;
+    transition: color .2s ease-in-out;
+    text-transform: uppercase;
+    font-weight: 900;
+  }
+  
+  @keyframes rainbow { 
+    0%{background-position: left;}
+    50%{background-position: right;}
+    100%{background-position: left;}
+  }

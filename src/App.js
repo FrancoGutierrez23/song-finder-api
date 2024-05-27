@@ -10,21 +10,19 @@ function App() {
   const [playlist, setPlaylist] = useState([]);
 
   const addToPlaylist = (song) => {
-    if(!playlist.includes(song)) {
-      setPlaylist([...playlist, song]);
-      song.artist.toggle = 0;
-    } else {
-      song.artist.toggle += 1;
-      setPlaylist([...playlist, song])
-    }
-      
+    const uniqueSong = { ...song, id: `${song.id}-${Date.now()}`, isRemoving: false };
+    setPlaylist(prevPlaylist => [...prevPlaylist, uniqueSong]);
   };
 
   const removeFromPlaylist = (index) => {
     setPlaylist(prevPlaylist => {
       const newPlaylist = [...prevPlaylist];
-      newPlaylist.splice(index, 1);
-      return newPlaylist;
+      newPlaylist[index].isRemoving = true; // Set isRemoving before actual removal
+      setTimeout(() => {
+        newPlaylist.splice(index, 1);
+        setPlaylist(newPlaylist); // Update state after animation
+      }, 500); // Match timeout to animation duration
+      return [...newPlaylist]; // Return updated playlist immediately
     });
   };
 

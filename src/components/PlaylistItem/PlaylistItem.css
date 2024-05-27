@@ -7,15 +7,20 @@
 
 /*Songs added to playlist*/
 .added-card {
-    border: 2px solid #00000000;
-    border-radius: 15px;
+    opacity: 1;
+    background-color: #00000050;
     max-width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 6px 4px;
-    padding: 6px;
+    padding: 12px 8px;
     color: #b7cfd5;
+    transition: transform 0.3s ease;
+    animation: none;
+}
+
+.added-card.adding {
+  animation: scaleUp 0.5s ease-out forwards;
 }
 
 /*Remove of playlist button*/
@@ -64,3 +69,28 @@
     white-space: nowrap;
 }
 
+.added-card.removing {
+    animation: scaleDown 0.2s ease-in forwards;
+}
+
+@keyframes scaleUp {
+    from {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+}
+
+@keyframes scaleDown {
+    from {
+      opacity: 1;
+      transform: scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+}

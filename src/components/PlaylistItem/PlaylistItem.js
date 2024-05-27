@@ -1,16 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './PlaylistItem.css';
 import SongPreviewButton from '../SongPreviewButton/SongPreviewButton';
 
-const PlaylistItem = ({song, removeFromPlaylist, playlist}) => {
-  // Function to handle removing the song from the playlist
-  const handleClick = () =>{
-    removeFromPlaylist(playlist.indexOf(song));
-    song.artist.toggle -= 1;
-  }
+const PlaylistItem = ({song, removeFromPlaylist, playlist, style}) => {
+  const [isRemoving, setIsRemoving] = useState(false);
 
+  const handleClick = () => {
+    setIsRemoving(true); // Trigger the removal animation
+    setTimeout(() => removeFromPlaylist(playlist.indexOf(song)), 200); // Remove the song after the animation
+  };
+  
   return (
-    <div className='added-card'>
+    <div className={`added-card ${isRemoving ? 'removing' : (isRemoving === false ? 'adding' : '')}`} style={style}>
       <div className='headings' >
         <h3>{song.title}</h3>
         <div className='cont'>{`${song.artist.name} at ${song.album.title}`}</div>

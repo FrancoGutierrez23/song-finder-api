@@ -14,5 +14,33 @@
     border-radius: 5px;
     background-color: #072831;
     margin-left: 0px;
+    transition: transform 0.2s ease-in-out;
+    transform: scale(1.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+.play:hover,
+.pause:hover {
+    transform: scale(1.2);
+}
+
+
+
+.button-content {
+    transition: opacity 0.3s ease-in-out;
+    opacity: 1;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .fade-enter {
+    opacity: 0;
+  }
+  
+  .fade-enter-active {
+    opacity: 1;
+  }

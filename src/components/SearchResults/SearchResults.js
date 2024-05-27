@@ -1,9 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './SearchResults.css';
 import SongPreviewButton from '../SongPreviewButton/SongPreviewButton';
+import { PiMusicNotesPlusFill } from "react-icons/pi";
 
 // Component to render each search result item
-const SearchResultItem = ({ result, addToPlaylist }) => {
+const SearchResultItem = ({ result, addToPlaylist, style }) => {
   const [showAddButton, setShowAddButton] = useState(false); // State to toggle add button visibility
   const addButtonRef = useRef(null); // Ref for the add button
   const optionsButtonRef = useRef(null); // Ref for the options button
@@ -47,10 +48,10 @@ const SearchResultItem = ({ result, addToPlaylist }) => {
     >
       {result.artist.toggle >= 0 ? (
         <div style={{ display: 'flex', width: '100%'}}>
-          <span className='add-again add-option-text'><span>+</span> <span>Add to playlist again</span></span>
+          <span className='add-again add-option-text'><PiMusicNotesPlusFill className='add-icon' /> <span>Add to playlist again</span></span>
         </div>
       ) : (
-        <p className='add-option-text'><span>+</span><span style={{paddingRight: 15}}>Add to playlist</span></p>
+        <p className='add-option-text'><PiMusicNotesPlusFill className='add-icon' /><span style={{paddingRight: 15}}>Add to playlist</span></p>
       )}
     </button>
   );
@@ -64,7 +65,7 @@ const SearchResultItem = ({ result, addToPlaylist }) => {
 
   // JSX for rendering each search result item
   return (
-    <div className='result-card'>
+    <div className='result-card' style={style}>
       <div className='headings'>
         <h3>{result.title}<p className='duration'> {formatTime(result.duration)}</p></h3>
         <div className='cont'>{`${result.artist.name} at ${result.album.title}`}</div>
@@ -82,8 +83,13 @@ const SearchResultItem = ({ result, addToPlaylist }) => {
 const SearchResults = ({ results, addToPlaylist }) => {
   return (
     <div className='results-cards-container'>
-      {results.map((result) => (
-        <SearchResultItem key={result.id} result={result} addToPlaylist={addToPlaylist} />
+      {results.map((result, index) => (
+        <SearchResultItem 
+          key={result.id} 
+          result={result} 
+          addToPlaylist={addToPlaylist} 
+          style={{ animationDelay: `${index * 0.1}s` }} // Each item appears 0.1s after the previous one
+        />
       ))}
     </div>
   );

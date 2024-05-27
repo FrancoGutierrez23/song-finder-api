@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { useAudio } from '../AudioContext/AudioContext'; // Import the context
 import './SongPreviewButton.css';
 import { FaPlay, FaPause } from "react-icons/fa";
+import { CSSTransition } from 'react-transition-group';
 
 const SongPreviewButton = ({ previewUrl }) => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -39,10 +40,18 @@ const SongPreviewButton = ({ previewUrl }) => {
   }, []);
 
   return (
-    <div className='sepcial'>
+    <div className='special'>
       <audio ref={audioRef} src={previewUrl} />
       <button onClick={togglePlay} className={isPlaying ? 'pause' : 'play'}>
-        {isPlaying ? <FaPause /> : <FaPlay />}
+        <CSSTransition
+          in={isPlaying}
+          timeout={300}
+          classNames="fade"
+        >
+          <span className="button-content">
+            {isPlaying ? <FaPause /> : <FaPlay />}
+          </span>
+        </CSSTransition>
       </button>
     </div>
   );

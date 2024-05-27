@@ -70,7 +70,6 @@ const Search = ({ addToPlaylist }) => {
         />
         
       </div>
-      
       {searchResults.length > 0 && (
         <SearchResults results={searchResults} addToPlaylist={addToPlaylist} />
       )}
