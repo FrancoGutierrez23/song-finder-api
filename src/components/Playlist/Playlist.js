@@ -3,15 +3,15 @@ import PlaylistItem from '../PlaylistItem/PlaylistItem';
 import './Playlist.css';
 
 const Playlist = ({playlist, removeFromPlaylist}) => {
-  const [animatingIds, setAnimatingIds] = useState(new Set());
+  // const [animatingIds, setAnimatingIds] = useState(new Set()); // Removed this line
 
   useEffect(() => {
     if (playlist.length > 0) {
       const newId = playlist[playlist.length - 1].id;
-      setAnimatingIds(prev => new Set([...prev, newId]));
+      // setAnimatingIds(prev => new Set([...prev, newId])); // Removed this line
 
       setTimeout(() => {
-        setAnimatingIds(prev => new Set([...prev].filter(id => id !== newId)));
+        // setAnimatingIds(prev => new Set([...prev].filter(id => id !== newId))); // Removed this line
       }, 500); // Animation duration
     }
   }, [playlist]);
