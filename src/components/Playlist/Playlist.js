@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import PlaylistItem from '../PlaylistItem/PlaylistItem';
 import './Playlist.css';
 
@@ -7,7 +7,7 @@ const Playlist = ({playlist, removeFromPlaylist}) => {
 
   useEffect(() => {
     if (playlist.length > 0) {
-      const newId = playlist[playlist.length - 1].id;
+      //const newId = playlist[playlist.length - 1].id;
       // setAnimatingIds(prev => new Set([...prev, newId])); // Removed this line
 
       setTimeout(() => {
