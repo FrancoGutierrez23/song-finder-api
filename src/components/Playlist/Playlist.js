@@ -8,7 +8,7 @@ const Playlist = ({playlist, removeFromPlaylist}) => {
   useEffect(() => {
     if (playlist.length > 0) {
       const newId = playlist[playlist.length - 1].id;
-      setAnimatingIds(new Set([...animatingIds, newId]));
+      setAnimatingIds(prev => new Set([...prev, newId]));
 
       setTimeout(() => {
         setAnimatingIds(prev => new Set([...prev].filter(id => id !== newId)));
