@@ -46,7 +46,7 @@ const VolumeControl = () => {
                 width: '100%',
                 background: getTrackBackground({
                   values: [volume * 100],
-                  colors: ['#fea500', '#ccc'],
+                  colors: ['#fea500', '#b7cfd5'],
                   min: 0,
                   max: 100
                 })
