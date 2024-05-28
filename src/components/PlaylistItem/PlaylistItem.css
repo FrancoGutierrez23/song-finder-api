@@ -25,15 +25,35 @@
 
 /*Remove of playlist button*/
 .remove-btn {
+    display: flex;
+    justify-content: space-evenly;
     border-radius: 5px;
-    border: 2px solid #072831;
-    padding: 4px 10px;
-    font-size: 18px;
-    color: #981212;
+    border: 1px solid #b7cfd5;
+    padding: 6px 10px;
+    font-size: 0.9em;
+    color: #b7cfd5;
     background-color: #072831;
     font-weight: bold;
-    width: 35px;
+    right: 1.4em;
+    top: 1em;
+    min-width: 15em;
+    position: absolute;
+}
+
+.options-btn {
     margin-left: 10px;
+    background-color: transparent;
+    border: none;
+    border-radius: 0.2em;
+    color: #fea500;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+.options-btn:hover {
+    transition: transform 0.2s ease-in-out;
+    transform: scale(1.2);
+    cursor: pointer;
 }
 
 .added-card .card-bttns {
@@ -77,10 +97,12 @@
     from {
       opacity: 0;
       transform: scale(0.5);
+      border-radius: 10px;
     }
     to {
       opacity: 1;
       transform: scale(1);
+      border-radius: 0px;
     }
 }
 
@@ -88,9 +110,11 @@
     from {
       opacity: 1;
       transform: scale(1);
+      border-radius: 10px;
     }
     to {
       opacity: 0;
       transform: scale(0.5);
+      border-radius: 0px;
     }
 }

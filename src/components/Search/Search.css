@@ -1,7 +1,7 @@
 /* Search container */
 .Search {
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* Align items at the start of the container */
     flex-wrap: wrap;
     justify-content: space-evenly;
   }
@@ -16,12 +16,20 @@
     overflow: hidden;
     border-radius: 5px;
     margin-bottom: 21px;
+    margin-top: 0; /* Ensure it aligns at the top */
+  }
+
+  @media (max-width: 650px) {
+    #wrapper {
+      padding-top: 20px;
+    }
   }
 
   #search {
     padding: .5rem;
     width: 100%;
     border: none;
+    border-radius: 5px;
     font-size: 1.15rem;
     transition: translateX 6s ease-in;
     background-color: #b7cfd5;
@@ -94,3 +102,5 @@
     -webkit-transition: all 0.35s ease-in-out;
     transition: all 0.35s ease-in-out;
   }
+  
+  

@@ -29,15 +29,14 @@
 /* Add Button Styles */
 .result-card .add {
     border-radius: 5px;
-    border: 3px solid #06262e;
+    border: 1px solid #b7cfd5;
     padding: 6px 10px;
     font-size: 13px;
     color: #b7cfd5;
     background-color: #072831;
     font-weight: bold;
-    z-index: 10;
     right: 1.4em;
-    top: 2em;
+    top: 1em;
     min-width: 15em;
     position: absolute;
 }
@@ -67,12 +66,18 @@ p.add-option-text span {
 /* Option Button Styles */
 #options {
     margin-left: 10px;
-    background-color: #072831;
+    background-color: transparent;
     border: none;
     border-radius: 0.2em;
-    color: #fea500; /* Orange color */
+    color: #fea500;
     font-weight: bold;
     font-size: 1.3em;
+}
+
+#options:hover {
+    transition: transform 0.2s ease-in-out;
+    transform: scale(1.2);
+    cursor: pointer;
 }
 
 /* Button Container Styles */
@@ -93,11 +98,13 @@ p.add-option-text span {
 /* Animation Keyframes Definition */
 @keyframes scaleUp {
     from {
-      opacity: 0;
-      transform: scale(0.5);
+        opacity: 0;
+        transform: scale(0.5);
+        border-radius: 10px;
     }
     to {
-      opacity: 1;
-      transform: scale(1);
+        opacity: 1;
+        transform: scale(1);
+        border-radius: 0px;
     }
 }
