@@ -1,36 +1,56 @@
-import React, { useEffect } from 'react';
+import React, { useState} from 'react';
 import PlaylistItem from '../PlaylistItem/PlaylistItem';
 import './Playlist.css';
+import { BiSolidEditAlt } from "react-icons/bi";
 
 const Playlist = ({playlist, removeFromPlaylist}) => {
-  // const [animatingIds, setAnimatingIds] = useState(new Set()); // Removed this line
+  const [isEditing, setIsEditing] = useState(false);
+  const [playlistName, setPlaylistName] = useState('My Playlist');
 
-  useEffect(() => {
-    if (playlist.length > 0) {
-      //const newId = playlist[playlist.length - 1].id;
-      // setAnimatingIds(prev => new Set([...prev, newId])); // Removed this line
-
-      setTimeout(() => {
-        // setAnimatingIds(prev => new Set([...prev].filter(id => id !== newId))); // Removed this line
-      }, 500); // Animation duration
+  const handleNameChange = (event) => {
+    const newName = event.target.value;
+    if (newName.length >= 0 && newName.length <= 30) {
+      setPlaylistName(newName);
     }
-  }, [playlist]);
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      toggleEdit();
+    }
+  };
+
+  const toggleEdit = () => {
+    setIsEditing(!isEditing);
+  };
 
   return (
     <div className='Playlist' id='playlist-section'>
-      <section className="wrap">
-        <h2 className="gradient-text">My Playlist</h2>
+      <section className="playlist-name-section">
+        {isEditing ? (
+          <input
+            id='playlist-name-input'
+            type="text"
+            value={playlistName}
+            onChange={handleNameChange}
+            onBlur={toggleEdit}
+            onKeyDown={handleKeyDown}
+            autoFocus
+          />
+        ) : (
+          <h2 className="gradient-text playlist-name" onClick={toggleEdit}>{playlistName}</h2>
+        )}
+        <button className='edit-playlist-button' onClick={toggleEdit}><BiSolidEditAlt /></button>
       </section>
       <div className='added-cards-container'>
-      {playlist.map((song, index) => (
-        <PlaylistItem 
-          key={song.id}
-          song={song} 
-          removeFromPlaylist={removeFromPlaylist} 
-          playlist={playlist}
-          className={song.isRemoving ? '' : 'adding'}
-        />
-      ))}
+        {playlist.map((song) => (
+          <PlaylistItem 
+            key={song.id}
+            song={song} 
+            removeFromPlaylist={removeFromPlaylist} 
+            playlist={playlist}
+          />
+        ))}
       </div>
     </div>
   );

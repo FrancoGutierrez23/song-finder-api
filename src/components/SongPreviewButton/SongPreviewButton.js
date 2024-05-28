@@ -7,6 +7,7 @@ import { CSSTransition } from 'react-transition-group';
 const SongPreviewButton = ({ previewUrl }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef(null);
+  const buttonRef = useRef(null); // Add this line to create a ref for the button
   const { setCurrentAudio } = useAudio(); // Use the context
 
   const togglePlay = () => {
@@ -42,11 +43,12 @@ const SongPreviewButton = ({ previewUrl }) => {
   return (
     <div className='special'>
       <audio ref={audioRef} src={previewUrl} />
-      <button onClick={togglePlay} className={isPlaying ? 'pause' : 'play'}>
+      <button ref={buttonRef} onClick={togglePlay} className={isPlaying ? 'pause' : 'play'}>
         <CSSTransition
           in={isPlaying}
           timeout={300}
           classNames="fade"
+          nodeRef={buttonRef}
         >
           <span className="button-content">
             {isPlaying ? <FaPause /> : <FaPlay />}
